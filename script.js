@@ -219,7 +219,7 @@ function cardHTML(issue) {
     </div>`;
 }
 
-// ── Modal: open ──────────────────────────────────────────────────────────────
+
 function openModal(id) {
   const issue = allIssues.find(i => String(i.id || i._id) === String(id));
   if (!issue) return;
@@ -230,54 +230,52 @@ function openModal(id) {
   const author = issue.author || issue.user?.login || 'Unknown';
   const imgSrc = s === 'open' ? IMG_OPEN : IMG_CLOSED;
 
-  // Top colour bar
+  
   document.getElementById('modal-top').className = `modal-top-bar ${s}`;
-
-  // Status icon image
   document.getElementById('m-icon').innerHTML =
     `<img src="${imgSrc}" alt="${s}" class="modal-status-img"/>`;
 
-  // Title
+  
   document.getElementById('m-title').textContent = issue.title || 'Untitled';
 
-  // Description
+ 
   document.getElementById('m-desc').textContent =
     issue.description || issue.body || 'No description provided.';
 
-  // Status pill with image
+  
   document.getElementById('m-status').innerHTML =
     `<span class="status-pill ${s}">
       <img src="${imgSrc}" alt="${s}"/>
       ${s.charAt(0).toUpperCase() + s.slice(1)}
     </span>`;
 
-  // Priority
+ 
   const pe       = document.getElementById('m-priority');
   pe.textContent = p || 'N/A';
   pe.className   = `priority-tag ${pClass(p)}`;
 
-  // Author
+  
   document.getElementById('m-author').textContent = author;
 
-  // Label
+  
   const le       = document.getElementById('m-label');
   le.textContent = l || 'None';
   le.className   = `label-tag ${lClass(l)}`;
 
-  // Date & ID
+  
   document.getElementById('m-date').textContent = fmtDate(issue.createdAt || issue.created_at);
   document.getElementById('m-id').textContent   = `#${issue.id || issue._id || 'N/A'}`;
 
-  // Show modal
+  
   document.getElementById('modal-overlay').classList.add('open');
 }
 
-// ── Modal: close ─────────────────────────────────────────────────────────────
+
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
 }
 
-/** Close when clicking the dark backdrop */
+
 function overlayClick(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
 }
