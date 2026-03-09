@@ -2,18 +2,18 @@
    GitHub Issues Tracker — script.js
 ============================================= */
 
-// ── Image paths for status icons ────────────────────────────────────────────
+
 const IMG_OPEN   = './assets/Open-Status.png';
 const IMG_CLOSED = './assets/Closed-Status.png';
 
-// ── State ────────────────────────────────────────────────────────────────────
+
 let allIssues = [];
 let activeTab = 'all';
 let searchQ   = '';
 
-// ── Utility Helpers ──────────────────────────────────────────────────────────
 
-/** Escape HTML to prevent XSS */
+
+
 function esc(s) {
   return String(s || '')
     .replace(/&/g, '&amp;')
@@ -22,7 +22,7 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
-/** Format ISO date → "Jan 1, 2024" */
+
 function fmtDate(s) {
   if (!s) return 'N/A';
   const d = new Date(s);
@@ -31,12 +31,12 @@ function fmtDate(s) {
     : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
-/** Normalise status to 'open' or 'closed' */
+
 function getStatus(issue) {
   return (issue.status || issue.state || 'open').toLowerCase();
 }
 
-/** Extract first label string */
+
 function getLabel(issue) {
   if (Array.isArray(issue.labels) && issue.labels.length > 0) {
     return typeof issue.labels[0] === 'string'
@@ -46,19 +46,19 @@ function getLabel(issue) {
   return issue.label || '';
 }
 
-/** Normalise priority to lowercase */
+
 function getPriority(issue) {
   return (issue.priority || '').toLowerCase();
 }
 
-/** CSS class for priority badge */
+
 function pClass(p) {
   if (p === 'high')   return 'p-high';
   if (p === 'medium') return 'p-medium';
   return 'p-low';
 }
 
-/** CSS class for label badge */
+
 function lClass(l) {
   const lc = (l || '').toLowerCase();
   if (lc.includes('bug'))         return 'lbl-bug';
@@ -68,14 +68,14 @@ function lClass(l) {
   return 'lbl-default';
 }
 
-/** Returns the correct status image tag for a card */
+
 function statusImg(status) {
   const src = status === 'open' ? IMG_OPEN : IMG_CLOSED;
   const alt = status === 'open' ? 'Open'   : 'Closed';
   return `<img src="${src}" alt="${alt}" class="card-status-img"/>`;
 }
 
-// ── Login ────────────────────────────────────────────────────────────────────
+
 function doLogin() {
   const u   = document.getElementById('inp-user').value.trim();
   const p   = document.getElementById('inp-pass').value.trim();
