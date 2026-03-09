@@ -92,19 +92,19 @@ function doLogin() {
   }
 }
 
-// ── Logout ───────────────────────────────────────────────────────────────────
+
 function doLogout() {
   document.getElementById('main-page').style.display  = 'none';
   document.getElementById('login-page').style.display = 'flex';
-  // Clear form
+ 
   document.getElementById('inp-user').value           = '';
   document.getElementById('inp-pass').value           = '';
   document.getElementById('err-box').style.display    = 'none';
   document.getElementById('search-box').value         = '';
-  // Reset state
+  
   searchQ   = '';
   activeTab = 'all';
-  // Reset tabs UI
+
   ['all', 'open', 'closed'].forEach(t => {
     document.getElementById('tab-' + t).classList.toggle('active', t === 'all');
   });
