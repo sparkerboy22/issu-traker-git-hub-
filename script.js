@@ -111,7 +111,7 @@ function doLogout() {
   closeModal();
 }
 
-// ── Keyboard shortcuts ───────────────────────────────────────────────────────
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && document.getElementById('login-page').style.display !== 'none') {
     doLogin();
@@ -121,7 +121,7 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// ── Fetch issues from API ────────────────────────────────────────────────────
+
 async function fetchAll() {
   showSpinner();
   try {
@@ -135,13 +135,13 @@ async function fetchAll() {
   }
 }
 
-/** Show loading spinner */
+
 function showSpinner() {
   document.getElementById('grid').innerHTML =
     `<div class="spinner-wrap"><div class="spinner"></div></div>`;
 }
 
-// ── Tab switching ────────────────────────────────────────────────────────────
+
 function switchTab(tab) {
   activeTab = tab;
   ['all', 'open', 'closed'].forEach(t => {
@@ -150,21 +150,21 @@ function switchTab(tab) {
   render();
 }
 
-// ── Search ───────────────────────────────────────────────────────────────────
+
 function onSearch(value) {
   searchQ = value.toLowerCase();
   render();
 }
 
-// ── Render grid ──────────────────────────────────────────────────────────────
+
 function render() {
   let list = [...allIssues];
 
-  // Filter by tab
+ 
   if (activeTab === 'open')   list = list.filter(i => getStatus(i) === 'open');
   if (activeTab === 'closed') list = list.filter(i => getStatus(i) === 'closed');
 
-  // Filter by search
+
   if (searchQ) {
     list = list.filter(i =>
       (i.title       || '').toLowerCase().includes(searchQ) ||
@@ -172,8 +172,6 @@ function render() {
       (i.author      || i.user?.login || '').toLowerCase().includes(searchQ)
     );
   }
-
-  // Update count
   document.getElementById('count-text').innerHTML =
     `<strong>${list.length}</strong> issues — Track and manage your project issues`;
 
@@ -191,7 +189,7 @@ function render() {
   grid.innerHTML = list.map(cardHTML).join('');
 }
 
-// ── Build a single card ──────────────────────────────────────────────────────
+
 function cardHTML(issue) {
   const s      = getStatus(issue);
   const p      = getPriority(issue);
