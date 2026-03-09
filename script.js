@@ -1,7 +1,3 @@
-/* =============================================
-   GitHub Issues Tracker — script.js
-============================================= */
-
 
 const IMG_OPEN   = './assets/Open-Status.png';
 const IMG_CLOSED = './assets/Closed-Status.png';
