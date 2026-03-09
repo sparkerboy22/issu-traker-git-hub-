@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-<!-- ==================== LOGIN PAGE ==================== -->
 <div id="login-page">
   <div class="login-box">
     <div class="login-header">
@@ -41,10 +39,9 @@
   </div>
 </div>
 
-<!-- ==================== MAIN PAGE ==================== -->
+
 <div id="main-page">
 
-  <!-- Navbar — white background -->
   <nav class="navbar">
     <div class="nav-left">
       <img class="nav-logo-img" src="./assets/github-logo.png" alt="GitHub Logo"/>
@@ -72,20 +69,20 @@
     </div>
   </nav>
 
-  <!-- Content -->
+  
   <div class="content">
 
-    <!-- Tabs -->
+  
     <div class="tabs-row">
       <button class="tab-btn active" id="tab-all"    onclick="switchTab('all')">All</button>
       <button class="tab-btn"        id="tab-open"   onclick="switchTab('open')">Open</button>
       <button class="tab-btn"        id="tab-closed" onclick="switchTab('closed')">Closed</button>
     </div>
 
-    <!-- Meta bar -->
+    
     <div class="issues-meta">
       <div class="issues-left">
-        <!-- Aperture.png used here beside issues count -->
+    
         <img src="./assets/Aperture.png" alt="Issues icon" class="meta-icon"/>
         <span id="count-text"><strong>0</strong> issues — Track and manage your project issues</span>
       </div>
@@ -101,7 +98,7 @@
       </div>
     </div>
 
-    <!-- Issues Grid -->
+  
     <div class="issues-grid" id="grid">
       <div class="spinner-wrap"><div class="spinner"></div></div>
     </div>
@@ -109,7 +106,6 @@
   </div>
 </div>
 
-<!-- ==================== MODAL ==================== -->
 <div class="modal-overlay" id="modal-overlay" onclick="overlayClick(event)">
   <div class="modal">
     <div class="modal-top-bar" id="modal-top"></div>
