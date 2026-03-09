@@ -1,6 +1,4 @@
-/* =============================================
-   RESET & BASE
-============================================= */
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -15,9 +13,7 @@ body {
   font-size: 14px;
 }
 
-/* =============================================
-   LOGIN PAGE
-============================================= */
+
 #login-page {
   display: flex;
   justify-content: center;
@@ -36,7 +32,7 @@ body {
   padding: 24px;
 }
 
-/* Login Header */
+
 .login-header {
   text-align: center;
   margin-bottom: 20px;
@@ -68,7 +64,7 @@ body {
   color: #57606a;
 }
 
-/* Error message */
+
 .error-msg {
   display: none;
   background: #ffebe9;
@@ -80,7 +76,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* Form fields */
+
 .form-field {
   margin-bottom: 14px;
 }
@@ -132,7 +128,7 @@ body {
   background: #2c974b;
 }
 
-/* Demo credentials */
+
 .demo-creds {
   margin-top: 16px;
   background: #f6f8fa;
@@ -161,16 +157,14 @@ body {
   color: #0969da;
 }
 
-/* =============================================
-   MAIN PAGE
-============================================= */
+
 #main-page {
   display: none;
   background: #ffffff;
   min-height: 100vh;
 }
 
-/* ---- NAVBAR — WHITE ---- */
+
 .navbar {
   background: #ffffff;
   border-bottom: 1px solid #d0d7de;
@@ -190,7 +184,7 @@ body {
   gap: 10px;
 }
 
-/* GitHub logo image in navbar */
+
 .nav-logo-img {
   width: 32px;
   height: 32px;
@@ -211,7 +205,7 @@ body {
   gap: 8px;
 }
 
-/* Search box */
+
 .nav-search-wrap {
   position: relative;
 }
@@ -248,7 +242,7 @@ body {
   width: 260px;
 }
 
-/* New Issue button */
+
 .btn-new-issue {
   display: inline-flex;
   align-items: center;
@@ -269,7 +263,7 @@ body {
   background: #2c974b;
 }
 
-/* Sign Out button */
+
 .btn-logout {
   display: inline-flex;
   align-items: center;
@@ -291,14 +285,14 @@ body {
   border-color: #8c959f;
 }
 
-/* ---- CONTENT ---- */
+
 .content {
   max-width: 1220px;
   margin: 0 auto;
   padding: 24px 16px;
 }
 
-/* ---- TABS ---- */
+
 .tabs-row {
   display: flex;
   gap: 6px;
@@ -333,7 +327,7 @@ body {
   border-color: #8250df;
 }
 
-/* ---- ISSUES META BAR ---- */
+
 .issues-meta {
   display: flex;
   align-items: center;
@@ -354,14 +348,14 @@ body {
   color: #24292f;
 }
 
-/* Aperture icon next to issue count */
+
 .meta-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
 
-/* Legend — Open / Closed */
+
 .legend {
   display: flex;
   align-items: center;
@@ -382,7 +376,7 @@ body {
   object-fit: contain;
 }
 
-/* ---- ISSUES GRID ---- */
+
 .issues-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -390,7 +384,7 @@ body {
   margin-top: 16px;
 }
 
-/* ---- ISSUE CARD ---- */
+
 .issue-card {
   background: #ffffff;
   border: 1px solid #d0d7de;
@@ -407,7 +401,7 @@ body {
   border-color: #0969da;
 }
 
-/* Coloured top border — green for open, purple for closed */
+
 .card-top {
   height: 4px;
 }
@@ -415,7 +409,7 @@ body {
 .card-top.open   { background: #1a7f37; }
 .card-top.closed { background: #8250df; }
 
-/* Card body */
+
 .card-body {
   padding: 12px;
   flex: 1;
@@ -424,7 +418,7 @@ body {
   gap: 6px;
 }
 
-/* Row 1: status icon + priority */
+
 .card-row1 {
   display: flex;
   align-items: flex-start;
@@ -433,7 +427,7 @@ body {
   min-height: 18px;
 }
 
-/* Status icon images on cards */
+
 .card-status-img {
   width: 16px;
   height: 16px;
@@ -442,7 +436,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Priority badge */
+
 .priority-tag {
   font-size: 10px;
   font-weight: 600;
@@ -458,7 +452,6 @@ body {
 .p-medium { background: #fff8c5; color: #7d4e00; border: 1px solid #e3b341; }
 .p-low    { background: #dafbe1; color: #116329; border: 1px solid #82cfaa; }
 
-/* Card title */
 .card-title {
   font-size: 13px;
   font-weight: 600;
@@ -470,7 +463,7 @@ body {
   overflow: hidden;
 }
 
-/* Card description */
+
 .card-desc {
   font-size: 12px;
   color: #57606a;
@@ -481,7 +474,7 @@ body {
   overflow: hidden;
 }
 
-/* Label tag */
+
 .label-tag {
   font-size: 11px;
   font-weight: 500;
@@ -497,7 +490,7 @@ body {
 .lbl-documentation { background: #dafbe1; color: #116329; border: 1px solid #82cfaa; }
 .lbl-default       { background: #f6f8fa; color: #57606a; border: 1px solid #d0d7de; }
 
-/* Card footer */
+
 .card-footer {
   display: flex;
   align-items: center;
@@ -522,7 +515,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ---- LOADING SPINNER ---- */
+
 .spinner-wrap {
   grid-column: 1 / -1;
   display: flex;
@@ -544,7 +537,7 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* ---- EMPTY STATE ---- */
+
 .empty-state {
   grid-column: 1 / -1;
   text-align: center;
@@ -557,9 +550,7 @@ body {
   font-size: 15px;
 }
 
-/* =============================================
-   MODAL
-============================================= */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -623,7 +614,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Status image inside modal icon-wrap */
+
 .modal-status-img {
   width: 18px;
   height: 18px;
@@ -691,7 +682,7 @@ body {
   color: #24292f;
 }
 
-/* Status pill inside modal */
+
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -712,9 +703,7 @@ body {
   object-fit: contain;
 }
 
-/* =============================================
-   RESPONSIVE
-============================================= */
+
 @media (max-width: 1024px) {
   .issues-grid { grid-template-columns: repeat(3, 1fr); }
 }
